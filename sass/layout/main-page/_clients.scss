@@ -1,0 +1,46 @@
+.clients {
+  @extend %section;
+}
+
+.clients__list {
+  @extend %list;
+  @include flex(flex);
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.clients__link {
+  @include flex (flex);
+  height: 92px;
+  border: 1px solid rgba(175, 177, 184, 1);
+  border-radius: 4px;
+
+  transition: border-color $transition-basic;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+  }
+
+  @media (min-width: 480px) {
+    width: 210px;
+  }
+
+  @media (min-width: 768px) {
+    width: 226px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 170px;
+  }
+}
+
+.clients__icon {
+  fill: #afb1b8;
+  transition: fill $transition-basic;
+
+  .clients__link:hover &,
+  .clients__link:focus & {
+    fill: $accent-color;
+  }
+}

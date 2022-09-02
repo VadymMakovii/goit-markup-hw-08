@@ -1,0 +1,133 @@
+@import './mobile-menu';
+
+.header {
+  background-color: $main-color-white;
+  border-bottom: 1px solid #ececec;
+}
+
+.header__conteiner {
+  @include flex(flex, center, space-between);
+
+  @media (max-width: 768px) {
+    position: relative;
+  }
+}
+
+.header__logo {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @media (min-width: 768px) {
+    margin-right: auto;
+    padding-top: 26px;
+    padding-bottom: 25px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-right: 92px;
+  }
+}
+
+.header-nav {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.header-nav__list {
+  @extend %list;
+  gap: 50px;
+}
+
+.header-nav__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 31px;
+  font-size: inherit;
+  line-height: 1.14;
+  color: $pimery-text-color;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+
+  transition: color $transition-basic;
+
+  &:focus,
+  &:hover {
+    color: $accent-color;
+  }
+
+  &_current {
+    color: $accent-color;
+
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+
+      bottom: -1px;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: $accent-color;
+      border-radius: 2px;
+    }
+  }
+}
+
+.header-contacts {
+  display: none;
+  @extend %list;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    flex-direction: column;
+    margin-left: auto;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
+
+.header-contacts__link {
+  @include flex(flex);
+
+  color: $paragraph-text-color;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+
+  transition: color $transition-basic;
+
+  &:focus,
+  &:hover {
+    color: $accent-color;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: inherit;
+    line-height: 1.14;
+  }
+}
+
+.header-contacts__icon {
+  @media (min-width: 768px) {
+    fill: $paragraph-text-color;
+    margin-right: 10px;
+
+    transition: fill $transition-basic;
+
+    .header-contacts__link:focus &,
+    .header-contacts__link:hover & {
+      fill: $accent-color;
+    }
+  }
+}
