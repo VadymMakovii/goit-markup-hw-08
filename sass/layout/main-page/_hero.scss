@@ -279,13 +279,9 @@
 }
 
 .form-accept {
-  @include flex(flex, flex-start, flex-end);
+  @include flex(flex);
   flex-direction: row-reverse;
   margin-top: 20px;
-
-  @media (min-width: 1200px) {
-    @include flex(flex);
-  }
 }
 
 .form-accept__text {

@@ -280,8 +280,6 @@ img {
 
 .mobile-menu-contacts__link {
   display: block;
-  align-items: center;
-  justify-content: center;
   color: #757575;
   font-weight: 500;
   font-size: 24px;
@@ -294,9 +292,18 @@ img {
   color: #2196f3;
 }
 .mobile-menu-contacts__link_accent {
-  font-size: 34px;
   color: #2196f3;
   margin-bottom: 32px;
+}
+@media (min-width: 300px) {
+  .mobile-menu-contacts__link_accent {
+    font-size: calc(24px + 2vw);
+  }
+}
+@media (min-width: 480px) {
+  .mobile-menu-contacts__link_accent {
+    font-size: 34px;
+  }
 }
 
 .mobile-menu-social__item {
@@ -311,11 +318,21 @@ img {
 
 .mobile-menu-social__link {
   font-weight: 500;
-  font-size: 18px;
+  font-size: calc(6px + 2vw);
   line-height: 1.22px;
   letter-spacing: 0.02em;
   color: #2196f3;
   text-decoration: none;
+}
+@media (min-width: 400px) {
+  .mobile-menu-social__link {
+    font-size: calc(13px + 1vw);
+  }
+}
+@media (min-width: 480px) {
+  .mobile-menu-social__link {
+    font-size: 18px;
+  }
 }
 
 .header {
@@ -386,7 +403,7 @@ img {
 .header-nav__link_current::after {
   content: "";
   position: absolute;
-  bottom: -1px;
+  bottom: -3px;
   display: block;
   width: 100%;
   height: 4px;
@@ -453,31 +470,24 @@ img {
 }
 
 .footer__conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  row-gap: 60px;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .footer__conteiner {
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 @media (min-width: 1200px) {
   .footer__conteiner {
-    display: flex;
-    align-items: baseline;
     justify-content: space-between;
     text-align: start;
-  }
-}
-
-.address-box {
-  margin-bottom: 60px;
-  display: block;
-}
-@media (min-width: 768px) {
-  .address-box {
-    display: inline-block;
-    margin-right: 165px;
-  }
-}
-@media (min-width: 1200px) {
-  .address-box {
-    margin-right: 70px;
-    margin-bottom: 0px;
   }
 }
 
@@ -519,20 +529,8 @@ img {
 
 /* Оформлення соціальних мереж */
 .footer-social {
-  width: 206px;
-  height: 80px;
   display: inline-block;
   vertical-align: top;
-}
-@media (max-width: 768px) {
-  .footer-social {
-    margin-bottom: 60px;
-  }
-}
-@media (min-width: 1200px) {
-  .footer-social {
-    margin-right: 93px;
-  }
 }
 
 .footer-social__title {
@@ -544,21 +542,15 @@ img {
 }
 
 /* Оформлення підписки */
-@media (min-width: 480px) {
-  .footer-subscribe {
-    width: 450px;
-    height: 156px;
-  }
-}
 @media (min-width: 768px) {
   .footer-subscribe {
     display: inline-block;
+    width: 450px;
   }
 }
 @media (min-width: 1200px) {
   .footer-subscribe {
     width: 570px;
-    height: 86px;
   }
 }
 
@@ -572,17 +564,11 @@ img {
   color: #ffffff;
 }
 
-.footer-subscribe__form {
-  display: block;
-  align-items: end;
-  justify-content: center;
-}
 @media (min-width: 1200px) {
   .footer-subscribe__form {
     display: flex;
     align-items: end;
     justify-content: center;
-    width: 570px;
   }
 }
 
@@ -917,17 +903,10 @@ img {
 
 .form-accept {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   flex-direction: row-reverse;
   margin-top: 20px;
-}
-@media (min-width: 1200px) {
-  .form-accept {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 .form-accept__text {
@@ -1284,6 +1263,7 @@ img {
 .portfolio-card__item {
   flex-basis: 100%;
   margin-bottom: 30px;
+  border: 1px solid #eeeeee;
 }
 @media (min-width: 768px) {
   .portfolio-card__item {
@@ -1338,15 +1318,17 @@ img {
   line-height: 1.56;
   color: #ffffff;
 }
+@media (max-width: 380px) {
+  .portfolio-card__overlay-description {
+    font-size: inherit;
+  }
+}
 
 .portfolio-card__content {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 24px;
   padding-right: 24px;
-  border-bottom: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
 }
 
 .portfolio-card__title {

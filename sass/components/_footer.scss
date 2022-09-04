@@ -5,27 +5,20 @@
 }
 
 .footer__conteiner {
+  @include flex(flex, center, space-around);
+  flex-direction: column;
+  row-gap: 60px;
   text-align: center;
 
-  @media (min-width: 1200px) {
-    @include flex(flex, baseline, space-between);
-    text-align: start;
-  }
-}
-
-.address-box {
-  margin-bottom: 60px;
-  display: block;
-
   @media (min-width: 768px) {
-    display: inline-block;
-
-    margin-right: 165px;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   @media (min-width: 1200px) {
-    margin-right: 70px;
-    margin-bottom: 0px;
+    justify-content: space-between;
+    text-align: start;
   }
 }
 
@@ -70,18 +63,8 @@
 /* Оформлення соціальних мереж */
 
 .footer-social {
-  width: 206px;
-  height: 80px;
   display: inline-block;
   vertical-align: top;
-
-  @media (max-width: 768px) {
-    margin-bottom: 60px;
-  }
-
-  @media (min-width: 1200px) {
-    margin-right: 93px;
-  }
 }
 
 .footer-social__title {
@@ -95,18 +78,13 @@
 /* Оформлення підписки */
 
 .footer-subscribe {
-  @media (min-width: 480px) {
-    width: 450px;
-    height: 156px;
-  }
-
   @media (min-width: 768px) {
     display: inline-block;
+    width: 450px;
   }
 
   @media (min-width: 1200px) {
     width: 570px;
-    height: 86px;
   }
 }
 
@@ -122,10 +100,8 @@
 }
 
 .footer-subscribe__form {
-  @include flex(block, end);
   @media (min-width: 1200px) {
     @include flex(flex, end);
-    width: 570px;
   }
 }
 
@@ -153,11 +129,11 @@
   }
 
   @media (max-width: 480px) {
-      width: 100%;
-      height: 50px;
-      margin-bottom: 20px;
-      margin-right: 0px;
-    }
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
 
   @media (min-width: 480px) {
     width: 450px;
